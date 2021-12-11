@@ -13,19 +13,25 @@ public class scr_Player : MonoBehaviour
     public float maxSpeed;
 
     [Header("Gun Behaviour")]
-    public float gunForce;
+    public float recoilForce;
     public int maxAmmo;
     public int currentAmmo;
     public float reloadTime;
     public float shotCooldown;
+    public float bulletForce;
 
 
     private float nextFireTime;
     private bool isReloading = false;
 
+
+
     // References
+    public GameObject bulletPrefab;
+    
     private GameObject gunPivot;
     private GameObject gun;
+    private GameObject firePoint;
     private Rigidbody2D rb;
 
 
@@ -36,6 +42,7 @@ public class scr_Player : MonoBehaviour
         // Set references
         gunPivot = GameObject.Find("GunPivot");
         gun = GameObject.Find("GunSprite");
+        firePoint = GameObject.Find("FirePoint");
         rb = gameObject.GetComponent<Rigidbody2D>();
 
         // Initialize variables
@@ -85,9 +92,12 @@ public class scr_Player : MonoBehaviour
             {
                 rb.velocity = Vector2.zero;
                 Vector2 directionVector = gameObject.transform.position - gun.transform.position;
-                rb.AddForce(directionVector.normalized * gunForce);
+                rb.AddForce(directionVector.normalized * recoilForce, ForceMode2D.Impulse);
                 nextFireTime = Time.time + shotCooldown;
                 currentAmmo--;
+
+                GameObject newBullet = Instantiate(bulletPrefab, firePoint.transform.position, firePoint.transform.rotation);
+                newBullet.GetComponent<Rigidbody2D>().AddForce(firePoint.transform.right * bulletForce, ForceMode2D.Impulse);
             }
         }
     }
