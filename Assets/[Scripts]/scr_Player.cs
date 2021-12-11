@@ -33,6 +33,7 @@ public class scr_Player : MonoBehaviour
     private GameObject gun;
     private GameObject firePoint;
     private Rigidbody2D rb;
+    private GameObject skeletonSprite;
 
 
 
@@ -44,6 +45,7 @@ public class scr_Player : MonoBehaviour
         gun = GameObject.Find("GunSprite");
         firePoint = GameObject.Find("FirePoint");
         rb = gameObject.GetComponent<Rigidbody2D>();
+        skeletonSprite = GameObject.Find("SkeletonSprite");
 
         // Initialize variables
         nextFireTime = Time.time;
@@ -82,6 +84,28 @@ public class scr_Player : MonoBehaviour
         float aimAngleDeg = aimAngleRad * Mathf.Rad2Deg;
 
         gunPivot.transform.eulerAngles = new Vector3(0, 0, aimAngleDeg);
+
+        if (firePoint.transform.position.x < gameObject.transform.position.x)
+        {
+            skeletonSprite.transform.localScale = new Vector3(1, 1, 1);
+            gun.transform.localScale = new Vector3(-1, -1, 1);
+            
+        }
+        else
+        {
+            skeletonSprite.transform.localScale = new Vector3(-1, 1, 1);
+            gun.transform.localScale = new Vector3(-1, 1, 1);
+
+        }
+
+        //if (gunPivot.transform.eulerAngles.z < -90 || gunPivot.transform.eulerAngles.z > 90)
+        //{
+        //    skeletonSprite.transform.localScale = new Vector3(-1, 1, 1);
+        //}
+        //else
+        //{
+        //    skeletonSprite.transform.localScale = new Vector3(1, 1, 1);
+        //}
     }
 
     public void FireGun()
