@@ -21,6 +21,11 @@ public class scr_Player : MonoBehaviour
     public float shotCooldown;
     public float bulletForce;
 
+    [Header("Sound Effects")]
+    public AudioClip fireSound;
+    public AudioClip emptyFireSound;
+    public AudioClip reloadSound;
+    public AudioClip landingSound;
 
     private float nextFireTime;
     private bool isReloading = false;
@@ -41,6 +46,7 @@ public class scr_Player : MonoBehaviour
     private new GameObject[] ammoUIimages = new GameObject[6];
     //private GameObject reloadBar;
     private Animator animator;
+    private Vector3 velocityBeforeCollision; 
 
 
 
@@ -93,7 +99,9 @@ public class scr_Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-       // Debug.Log("Velocity = " + rb.velocity);
+        // Debug.Log("Velocity = " + rb.velocity);
+        velocityBeforeCollision = rb.velocity;
+
     }
 
 
@@ -155,7 +163,14 @@ public class scr_Player : MonoBehaviour
                 GameObject newBullet = Instantiate(bulletPrefab, firePoint.transform.position, firePoint.transform.rotation);
                 newBullet.GetComponent<Rigidbody2D>().AddForce(firePoint.transform.right * bulletForce, ForceMode2D.Impulse);
                 UpdateAmmoUI();
+                scr_SoundEffectsManager.PlaySoundEffect(fireSound, 1);
+                scr_Score.shotsTaken++;
             }
+        }
+        else
+        {
+            scr_SoundEffectsManager.PlaySoundEffect(emptyFireSound, 1);
+
         }
     }
 
@@ -165,17 +180,20 @@ public class scr_Player : MonoBehaviour
         {
             Invoke("FillAmmo", reloadTime);
             isReloading = true;
-            Debug.Log("STARTING TO RELOAD");
+            //Debug.Log("STARTING TO RELOAD");
             animator.SetBool("isReloading", true);
+            scr_SoundEffectsManager.PlaySoundEffect(reloadSound, 1);
+            scr_Score.reloadsTaken++;
+
         }
-      
+
     }
 
     private void FillAmmo()
     {
         currentAmmo = maxAmmo;
         isReloading = false;
-        Debug.Log("RELOAD COMPLETE");
+        //Debug.Log("RELOAD COMPLETE");
         UpdateAmmoUI();
         animator.SetBool("isReloading", false);
     }
@@ -223,6 +241,15 @@ public class scr_Player : MonoBehaviour
         {
             skeletonSprite.transform.localScale = new Vector3(-1, 1, 1);
             gun.transform.localScale = new Vector3(-1, 1, 1);
+
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Platforms"))
+        {
+            scr_SoundEffectsManager.PlaySoundEffect(landingSound, -velocityBeforeCollision.y / 10f);
 
         }
     }

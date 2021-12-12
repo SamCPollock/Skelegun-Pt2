@@ -7,6 +7,9 @@ public class scr_Score : MonoBehaviour
 {
     static public int score;
     static private TextMeshProUGUI scoreDisplay;
+    static public int shotsTaken;
+    static public int reloadsTaken;
+
     void Start()
     {
         scoreDisplay = gameObject.GetComponent<TextMeshProUGUI>();

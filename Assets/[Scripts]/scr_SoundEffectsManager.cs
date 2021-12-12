@@ -15,9 +15,9 @@ public class scr_SoundEffectsManager : MonoBehaviour
     public static scr_SoundEffectsManager SFXManager;   
 
     public AudioClip[] audioClips;
-    public AudioClip music;
+    //public AudioClip music;
 
-    private AudioSource audioSource;
+    private static AudioSource audioSource;
 
 
     private void Awake()
@@ -34,8 +34,11 @@ public class scr_SoundEffectsManager : MonoBehaviour
     /// Plays a sound effect according to an index passed in. 
     /// </summary>
     /// <param name="clipIndex"></param>
-    public void PlaySoundEffect(int clipIndex)
+    public static void PlaySoundEffect(AudioClip clipToPlay, float volumeLevel = 1, float pitchLevel = 1)
     {
-        audioSource.PlayOneShot(audioClips[clipIndex]);
+        audioSource.volume = volumeLevel;
+        //Debug.Log(clipToPlay + "---  PLAYING SOUND AT PITCH: " + (pitchLevel));
+
+        audioSource.PlayOneShot(clipToPlay);
     }
 }

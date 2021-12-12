@@ -5,7 +5,7 @@ using TMPro;
 
 public class scr_Timer : MonoBehaviour
 {
-    public float timerTime;
+    public static float timerTime;
     public TextMeshProUGUI timerDisplay;
 
 
