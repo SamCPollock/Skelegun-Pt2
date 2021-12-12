@@ -591,7 +591,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5587994588024160550}
   - component: {fileID: 6341616612870457777}
-  - component: {fileID: 6341616612870457778}
   m_Layer: 0
   m_Name: BouncyPlatform
   m_TagString: Untagged
@@ -647,24 +646,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.9701376, y: 1}
   m_EdgeRadius: 0
---- !u!252 &6341616612870457778
-SurfaceEffector2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8084388515328919573}
-  m_Enabled: 1
-  m_UseColliderMask: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_Speed: 1
-  m_SpeedVariation: 0
-  m_ForceScale: 0.1
-  m_UseContactForce: 0
-  m_UseFriction: 1
-  m_UseBounce: 1
 --- !u!1 &8906773233036790281
 GameObject:
   m_ObjectHideFlags: 0

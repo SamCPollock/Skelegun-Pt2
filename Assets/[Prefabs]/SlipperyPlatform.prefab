@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7810173068466676195}
   - component: {fileID: 7810173068466676192}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Assets_4 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7810173068532892143}
   - component: {fileID: 7810173068532892140}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Assets_4 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7810173068624064696}
   - component: {fileID: 7810173068624064697}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Assets_4 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,7 +259,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7810173069367638795}
   - component: {fileID: 7810173069367638792}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Assets_4 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -342,7 +342,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7810173069528057213}
   - component: {fileID: 7810173069528057186}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Assets_4 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -425,7 +425,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7810173069701896120}
   - component: {fileID: 7810173069701896121}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Assets_4 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -508,8 +508,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7810173069991495703}
   - component: {fileID: 7810173069991495702}
-  - component: {fileID: 7810173069991495697}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SlipperyPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -564,24 +563,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.9701376, y: 1}
   m_EdgeRadius: 0
---- !u!252 &7810173069991495697
-SurfaceEffector2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7810173069991495696}
-  m_Enabled: 1
-  m_UseColliderMask: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_Speed: 1
-  m_SpeedVariation: 0
-  m_ForceScale: 0.1
-  m_UseContactForce: 0
-  m_UseFriction: 1
-  m_UseBounce: 1
 --- !u!1 &7810173070084885801
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,7 +573,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7810173070084885806}
   - component: {fileID: 7810173070084885807}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Assets_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -675,7 +656,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7810173070228673133}
   - component: {fileID: 7810173070228673106}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Assets_4 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

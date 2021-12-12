@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class scr_Player : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class scr_Player : MonoBehaviour
     private float nextFireTime;
     private bool isReloading = false;
 
+    static public bool isMobile;
+
 
 
     // References
@@ -34,6 +37,10 @@ public class scr_Player : MonoBehaviour
     private GameObject firePoint;
     private Rigidbody2D rb;
     private GameObject skeletonSprite;
+    private GameObject ammoUI;
+    private new GameObject[] ammoUIimages = new GameObject[6];
+    //private GameObject reloadBar;
+    private Animator animator;
 
 
 
@@ -46,6 +53,14 @@ public class scr_Player : MonoBehaviour
         firePoint = GameObject.Find("FirePoint");
         rb = gameObject.GetComponent<Rigidbody2D>();
         skeletonSprite = GameObject.Find("SkeletonSprite");
+        ammoUI = GameObject.Find("AmmoUI");
+        //reloadBar = GameObject.Find("ReloadBarSlider");
+        animator = gameObject.GetComponent<Animator>();
+
+        for (int i = 0; i < ammoUIimages.Length; i++)
+        {
+            ammoUIimages[i] = ammoUI.transform.GetChild(i).gameObject;
+        }
 
         // Initialize variables
         nextFireTime = Time.time;
@@ -54,20 +69,25 @@ public class scr_Player : MonoBehaviour
 
     void Update()
     {
-        if (joystick.Horizontal != 0 && joystick.Vertical != 0)
+
+        if (isMobile)
         {
-            AimGun();
+            // Touch screen controls 
+            if (joystick.Horizontal != 0 && joystick.Vertical != 0)
+            {
+                AimGun();
+            }
+
         }
 
-        if (rb.velocity.x > maxSpeed)
+        else
         {
-            rb.velocity = new Vector2(maxSpeed, rb.velocity.y);
+            // Mouse controls
+            AimGunMouse();
         }
 
-        if (rb.velocity.y > maxSpeed)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, maxSpeed);
-        }
+
+        ManageMaxSpeed();
 
     }
 
@@ -108,6 +128,27 @@ public class scr_Player : MonoBehaviour
         //}
     }
 
+    void AimGunMouse()
+    {
+        Vector2 aimDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+
+        float aimAngleRad = Mathf.Atan2(aimDirection.y, aimDirection.x);
+        float aimAngleDeg = aimAngleRad * Mathf.Rad2Deg;
+
+        gunPivot.transform.eulerAngles = new Vector3(0, 0, aimAngleDeg);
+
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            FireGun();
+        }
+        if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.R))
+        {
+            ReloadPressed();
+        }
+
+    }
+
     public void FireGun()
     {
         if (currentAmmo > 0 && !isReloading)
@@ -122,6 +163,7 @@ public class scr_Player : MonoBehaviour
 
                 GameObject newBullet = Instantiate(bulletPrefab, firePoint.transform.position, firePoint.transform.rotation);
                 newBullet.GetComponent<Rigidbody2D>().AddForce(firePoint.transform.right * bulletForce, ForceMode2D.Impulse);
+                UpdateAmmoUI();
             }
         }
     }
@@ -130,17 +172,52 @@ public class scr_Player : MonoBehaviour
     {
         if (!isReloading)
         {
-            Invoke("UpdateAmmo", reloadTime);
+            Invoke("FillAmmo", reloadTime);
             isReloading = true;
             Debug.Log("STARTING TO RELOAD");
+            animator.SetBool("isReloading", true);
         }
+      
     }
 
-    private void UpdateAmmo()
+    private void FillAmmo()
     {
         currentAmmo = maxAmmo;
         isReloading = false;
         Debug.Log("RELOAD COMPLETE");
-
+        UpdateAmmoUI();
+        animator.SetBool("isReloading", false);
     }
+
+    private void UpdateAmmoUI()
+    {
+        for (int i = 0; i < ammoUIimages.Length; i++)
+        {
+            if (i >= currentAmmo)
+            {
+                ammoUIimages[i].SetActive(false);
+            }
+            else
+            {
+                ammoUIimages[i].SetActive(true);
+
+            }
+        }
+    }
+
+
+    private void ManageMaxSpeed()
+    {
+
+        if (rb.velocity.x > maxSpeed)
+        {
+            rb.velocity = new Vector2(maxSpeed, rb.velocity.y);
+        }
+
+        if (rb.velocity.y > maxSpeed)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, maxSpeed);
+        }
+    }
+
 }

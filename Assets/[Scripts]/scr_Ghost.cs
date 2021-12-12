@@ -44,7 +44,6 @@ public class scr_Ghost : MonoBehaviour
 
     void FadeIn()
     {
-        Debug.Log("FADING IN");
         Color tempColor = spriteRenderer.color;
         tempColor.a = 1;
         spriteRenderer.color = tempColor;
@@ -55,7 +54,6 @@ public class scr_Ghost : MonoBehaviour
 
     void FadeOut()
     {
-        Debug.Log("FADING OUT");
 
         isFadedIn = false;
         Color tempColor = spriteRenderer.color;
