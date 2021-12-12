@@ -114,3 +114,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreValue: 30
+  targetDestroyedSound: {fileID: 8300000, guid: 2c30352ca699c9d4abff75c778643b4c, type: 3}

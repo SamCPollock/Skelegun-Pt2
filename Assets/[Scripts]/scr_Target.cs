@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class scr_Target : MonoBehaviour
 {
-    public int scoreValue; 
+    public int scoreValue;
+    public AudioClip targetDestroyedSound;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -19,6 +20,7 @@ public class scr_Target : MonoBehaviour
     private void AwardScore()
     {
         scr_Score.AddScore(scoreValue);
+        scr_SoundEffectsManager.PlaySoundEffect(targetDestroyedSound);
         Destroy(gameObject);
     }
 }

@@ -8,7 +8,7 @@ public class scr_Bullet : MonoBehaviour
 
 
     private float timeExisting = 0;
-
+    public AudioClip hitSound;
     void Start()
     {
         
@@ -34,6 +34,7 @@ public class scr_Bullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Destroy(collision.gameObject);
+            scr_SoundEffectsManager.PlaySoundEffect(hitSound, 1, 0.5f);
             scr_Score.AddScore(10);
         }
         DestroyBullet();

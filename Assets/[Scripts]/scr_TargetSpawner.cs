@@ -5,7 +5,7 @@ using UnityEngine;
 public class scr_TargetSpawner : MonoBehaviour
 {
 
-    public List<Transform> targetSpawnLocations = new List<Transform>();
+    private List<Transform> targetSpawnLocations = new List<Transform>();
     public GameObject targetPrefab;
     public int targetsToSpawn;
 
@@ -17,6 +17,11 @@ public class scr_TargetSpawner : MonoBehaviour
 
     void SpawnTargets()
     {
+
+        for(int i = 0; i < gameObject.transform.childCount; i++)
+        {
+            targetSpawnLocations.Add(gameObject.transform.GetChild(i));
+        }
 
         for (int i = 0; i < targetsToSpawn; i++)
         {

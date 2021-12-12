@@ -15,6 +15,8 @@ using UnityEngine.SceneManagement;
 
 public class scr_SceneButton : MonoBehaviour
 {
+    public AudioClip buttonClicked;
+
     /// <summary>
     /// Loads up a scene according to an index passed to the function.
     /// </summary>
@@ -22,5 +24,6 @@ public class scr_SceneButton : MonoBehaviour
     public void OnSceneChangeButtonPressed(int targetSceneIndex)
     {
         SceneManager.LoadScene(targetSceneIndex);
+        scr_SoundEffectsManager.PlaySoundEffect(buttonClicked);
     }
 }

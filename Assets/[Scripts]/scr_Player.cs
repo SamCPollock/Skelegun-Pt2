@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class scr_Player : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class scr_Player : MonoBehaviour
 
     [Header("Movement")]
     public float maxSpeed;
+    public float lives;
 
     [Header("Gun Behaviour")]
     public float recoilForce;
@@ -26,6 +28,7 @@ public class scr_Player : MonoBehaviour
     public AudioClip emptyFireSound;
     public AudioClip reloadSound;
     public AudioClip landingSound;
+    public AudioClip hitSound;
 
     private float nextFireTime;
     private bool isReloading = false;
@@ -46,7 +49,10 @@ public class scr_Player : MonoBehaviour
     private new GameObject[] ammoUIimages = new GameObject[6];
     //private GameObject reloadBar;
     private Animator animator;
+    private GameObject spawnPoint;
+
     private Vector3 velocityBeforeCollision; 
+
 
 
 
@@ -62,6 +68,7 @@ public class scr_Player : MonoBehaviour
         ammoUI = GameObject.Find("AmmoUI");
         //reloadBar = GameObject.Find("ReloadBarSlider");
         animator = gameObject.GetComponent<Animator>();
+        spawnPoint = GameObject.Find("SpawnPoint");
 
         for (int i = 0; i < ammoUIimages.Length; i++)
         {
@@ -247,10 +254,29 @@ public class scr_Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Platforms"))
+        if (collision.gameObject.CompareTag("Platforms") && velocityBeforeCollision.y < -1)
         {
             scr_SoundEffectsManager.PlaySoundEffect(landingSound, -velocityBeforeCollision.y / 10f);
 
+        }
+        else if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        lives--;
+        Destroy(GameObject.Find("LivesUI").transform.GetChild(0).gameObject);
+        if (lives <= 0)
+        {
+            SceneManager.LoadScene("Scene_Lose");
+        }
+        else
+        {
+            scr_SoundEffectsManager.PlaySoundEffect(hitSound);
+            gameObject.transform.position = spawnPoint.transform.position;
         }
     }
 
