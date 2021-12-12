@@ -44,6 +44,7 @@ public class scr_Ghost : MonoBehaviour
 
     void FadeIn()
     {
+        gameObject.layer = 9;
         Color tempColor = spriteRenderer.color;
         tempColor.a = 1;
         spriteRenderer.color = tempColor;
@@ -54,7 +55,7 @@ public class scr_Ghost : MonoBehaviour
 
     void FadeOut()
     {
-
+        gameObject.layer = 7;
         isFadedIn = false;
         Color tempColor = spriteRenderer.color;
         tempColor.a = 0.1f;

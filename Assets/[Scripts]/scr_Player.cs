@@ -105,18 +105,8 @@ public class scr_Player : MonoBehaviour
 
         gunPivot.transform.eulerAngles = new Vector3(0, 0, aimAngleDeg);
 
-        if (firePoint.transform.position.x < gameObject.transform.position.x)
-        {
-            skeletonSprite.transform.localScale = new Vector3(1, 1, 1);
-            gun.transform.localScale = new Vector3(-1, -1, 1);
-            
-        }
-        else
-        {
-            skeletonSprite.transform.localScale = new Vector3(-1, 1, 1);
-            gun.transform.localScale = new Vector3(-1, 1, 1);
-
-        }
+        HandleFacingDirection();
+    
 
         //if (gunPivot.transform.eulerAngles.z < -90 || gunPivot.transform.eulerAngles.z > 90)
         //{
@@ -137,6 +127,7 @@ public class scr_Player : MonoBehaviour
 
         gunPivot.transform.eulerAngles = new Vector3(0, 0, aimAngleDeg);
 
+        HandleFacingDirection();
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -217,6 +208,22 @@ public class scr_Player : MonoBehaviour
         if (rb.velocity.y > maxSpeed)
         {
             rb.velocity = new Vector2(rb.velocity.x, maxSpeed);
+        }
+    }
+
+    private void HandleFacingDirection()
+    {
+        if (firePoint.transform.position.x < gameObject.transform.position.x)
+        {
+            skeletonSprite.transform.localScale = new Vector3(1, 1, 1);
+            gun.transform.localScale = new Vector3(-1, -1, 1);
+
+        }
+        else
+        {
+            skeletonSprite.transform.localScale = new Vector3(-1, 1, 1);
+            gun.transform.localScale = new Vector3(-1, 1, 1);
+
         }
     }
 

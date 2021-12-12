@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7651971242513236530}
   - component: {fileID: 7651971242513236533}
   m_Layer: 7
-  m_Name: rightBound (1)
+  m_Name: topBound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,7 +40,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 7651971242513236531}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a72aa71df80355748a03903e1476f390, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 7651971242327854561}
   m_Layer: 9
   m_Name: Ghost
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -254,7 +254,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 7651971242944805607}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a72aa71df80355748a03903e1476f390, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -311,7 +311,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 7651971243006168218}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a72aa71df80355748a03903e1476f390, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -351,7 +351,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7651971243080533020}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.76, y: 0.96, z: 1.7678746}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 7651971243577154700}
   - component: {fileID: 7651971243577154703}
   m_Layer: 7
-  m_Name: rightBound (2)
+  m_Name: bottomBound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -403,7 +403,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 7651971243577154701}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a72aa71df80355748a03903e1476f390, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0

@@ -31,6 +31,11 @@ public class scr_Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(collision.gameObject);
+            scr_Score.AddScore(10);
+        }
         DestroyBullet();
     }
 }
