@@ -1,3 +1,11 @@
+/*
+/* Sourcefile:      scr_Exit.cs
+ * Author:          Sam Pollock
+ * Student Number:  101279608
+ * Last Modified:   Dec 12, 2021
+ * Description:     Handles leaving the gameplay scene and assigning score values in Playerprefs
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +24,9 @@ public class scr_Exit : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Leave the scene and assign playerprefs scores. 
+    /// </summary>
     private void EndLevel()
     {
         SceneManager.LoadScene("scene_Win");
@@ -27,7 +38,6 @@ public class scr_Exit : MonoBehaviour
 
 
 
-        //PlayerPrefs.GetInt(playerPrefKey).ToString();
 
     }
 }

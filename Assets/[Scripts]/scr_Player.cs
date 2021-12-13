@@ -1,3 +1,11 @@
+/*
+/* Sourcefile:      scr_Player.cs
+ * Author:          Sam Pollock
+ * Student Number:  101279608
+ * Last Modified:   Dec 12, 2021
+ * Description:     Handles player logic
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -104,14 +112,18 @@ public class scr_Player : MonoBehaviour
 
     }
 
+
     private void FixedUpdate()
     {
-        // Debug.Log("Velocity = " + rb.velocity);
+        // Store velocity before physics update, used for determining speed of collisions.
         velocityBeforeCollision = rb.velocity;
 
     }
 
 
+    /// <summary>
+    /// Aims the gun according to touchscreen input.
+    /// </summary>
     private void AimGun()
     {
         Vector2 aimDirection = joystick.Direction;
@@ -122,17 +134,10 @@ public class scr_Player : MonoBehaviour
 
         HandleFacingDirection();
     
-
-        //if (gunPivot.transform.eulerAngles.z < -90 || gunPivot.transform.eulerAngles.z > 90)
-        //{
-        //    skeletonSprite.transform.localScale = new Vector3(-1, 1, 1);
-        //}
-        //else
-        //{
-        //    skeletonSprite.transform.localScale = new Vector3(1, 1, 1);
-        //}
     }
-
+    /// <summary>
+    /// Aims the gun using mouse position. 
+    /// </summary>
     void AimGunMouse()
     {
         Vector2 aimDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -155,6 +160,9 @@ public class scr_Player : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Fires a bullet and sends player flying with recoil.
+    /// </summary>
     public void FireGun()
     {
         if (currentAmmo > 0 && !isReloading)
@@ -181,6 +189,9 @@ public class scr_Player : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Start reloading
+    /// </summary>
     public void ReloadPressed()
     {
         if (!isReloading)
@@ -195,7 +206,9 @@ public class scr_Player : MonoBehaviour
         }
 
     }
-
+    /// <summary>
+    /// Finish reloading
+    /// </summary>
     private void FillAmmo()
     {
         currentAmmo = maxAmmo;
@@ -204,7 +217,9 @@ public class scr_Player : MonoBehaviour
         UpdateAmmoUI();
         animator.SetBool("isReloading", false);
     }
-
+    /// <summary>
+    /// Updates UI ammo display
+    /// </summary>
     private void UpdateAmmoUI()
     {
         for (int i = 0; i < ammoUIimages.Length; i++)
@@ -221,7 +236,9 @@ public class scr_Player : MonoBehaviour
         }
     }
 
-
+    /// <summary>
+    /// Ensure player is moving under max speed
+    /// </summary>
     private void ManageMaxSpeed()
     {
 
@@ -235,7 +252,9 @@ public class scr_Player : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, maxSpeed);
         }
     }
-
+    /// <summary>
+    /// Face player towards aiming direction
+    /// </summary>
     private void HandleFacingDirection()
     {
         if (firePoint.transform.position.x < gameObject.transform.position.x)
@@ -251,9 +270,9 @@ public class scr_Player : MonoBehaviour
 
         }
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        /// Play landing "ding" sound, volume determined by falling speed. 
         if (collision.gameObject.CompareTag("Platforms") && velocityBeforeCollision.y < -1)
         {
             scr_SoundEffectsManager.PlaySoundEffect(landingSound, -velocityBeforeCollision.y / 10f);
@@ -265,6 +284,9 @@ public class scr_Player : MonoBehaviour
         }
     }
 
+    /// <summary>
+    ///  Lose lives or lose the game when hit by an enemy or spikes. 
+    /// </summary>
     private void Die()
     {
         lives--;

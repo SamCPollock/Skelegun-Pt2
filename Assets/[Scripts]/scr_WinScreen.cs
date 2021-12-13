@@ -1,3 +1,11 @@
+/*
+/* Sourcefile:      scr_WinScreen.cs
+ * Author:          Sam Pollock
+ * Student Number:  101279608
+ * Last Modified:   Dec 12, 2021
+ * Description:     Sets the values on win screen score UI
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

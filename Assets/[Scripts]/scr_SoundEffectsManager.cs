@@ -1,7 +1,7 @@
 /* Sourcefile:      scr_SoundEffectsManager.cs
  * Author:          Sam Pollock
  * Student Number:  101279608
- * Last Modified:   October 24th, 2021
+ * Last Modified:   Dec 12, 2021
  * Description:     Handles sound effects for the scene
  * Last edit:       Set as static for global access
  */

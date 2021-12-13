@@ -2,9 +2,8 @@
 /* Sourcefile:      scr_SceneButton.cs
  * Author:          Sam Pollock
  * Student Number:  101279608
- * Last Modified:   October 20th, 2021
+ * Last Modified:   Dec 12, 2021
  * Description:     Handles scene changing on button press
- * Last edit:       Created script
  */
 
 

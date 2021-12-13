@@ -1,3 +1,10 @@
+/*
+/* Sourcefile:      scr_Zombie.cs
+ * Author:          Sam Pollock
+ * Student Number:  101279608
+ * Last Modified:   Dec 12, 2021
+ * Description:     Handles zombie enemy logic
+ */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,13 +32,18 @@ public class scr_Zombie : MonoBehaviour
         LookAhead();
         MoveEnemy();
     }
-
+    /// <summary>
+    /// Checks down to ensure the zombie is not going to step off a cliff
+    /// </summary>
     private void LookBelow()
     {
         var hit = Physics2D.Linecast(transform.position, lookBelowPoint.position, groundLayerMask);
         isGroundAhead = (hit) ? true : false;
     }
 
+    /// <summary>
+    /// Check ahead to determine if the zombie is walking into a wall
+    /// </summary>
     private void LookAhead()
     {
         var hit = Physics2D.Linecast(transform.position, lookAheadPoint.position, wallLayerMask);
@@ -41,7 +53,9 @@ public class scr_Zombie : MonoBehaviour
         }
     }
 
-
+    /// <summary>
+    /// Walks forward according to walkSpeed
+    /// </summary>
     private void MoveEnemy()
     {
         if (isGroundAhead)
@@ -55,7 +69,9 @@ public class scr_Zombie : MonoBehaviour
         }
     }
 
-
+    /// <summary>
+    /// Reverse facing direction.
+    /// </summary>
     private void Flip()
     {
         transform.localScale = new Vector3(transform.localScale.x * -1.0f, transform.localScale.y, transform.localScale.z);

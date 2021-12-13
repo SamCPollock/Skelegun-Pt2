@@ -1,3 +1,11 @@
+/*
+/* Sourcefile:      scr_Timer.cs
+ * Author:          Sam Pollock
+ * Student Number:  101279608
+ * Last Modified:   Dec 12, 2021
+ * Description:     Updates the on-screen timer. 
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

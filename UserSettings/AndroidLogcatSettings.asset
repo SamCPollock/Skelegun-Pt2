@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "emulator-5554",
         "name": "com.sammakesgames.ricochetspace",
-        "processId": 2963,
+        "processId": 5369,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -12,30 +12,48 @@
             "deviceId": "emulator-5554",
             "name": "com.SamMakesGames.RicochetSpace",
             "processId": 3361,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "emulator-5554",
             "name": "com.SamMakesGames.RicochetSpace",
             "processId": 3644,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "emulator-5554",
             "name": "com.sammakesgames.ricochetspace",
             "processId": 3826,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "emulator-5554",
             "name": "com.sammakesgames.ricochetspace",
             "processId": 3029,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "emulator-5554",
             "name": "com.sammakesgames.ricochetspace",
             "processId": 2963,
+            "exited": true
+        },
+        {
+            "deviceId": "emulator-5554",
+            "name": "com.sammakesgames.ricochetspace",
+            "processId": 4969,
+            "exited": false
+        },
+        {
+            "deviceId": "emulator-5554",
+            "name": "com.sammakesgames.ricochetspace",
+            "processId": 5192,
+            "exited": false
+        },
+        {
+            "deviceId": "emulator-5554",
+            "name": "com.sammakesgames.ricochetspace",
+            "processId": 5369,
             "exited": false
         }
     ],

@@ -1,3 +1,11 @@
+/*
+/* Sourcefile:      scr_Target.cs
+ * Author:          Sam Pollock
+ * Student Number:  101279608
+ * Last Modified:   Dec 12, 2021
+ * Description:     Handles Target logic
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +25,10 @@ public class scr_Target : MonoBehaviour
 
 
 
+
+    /// <summary>
+    /// Adds to score total
+    /// </summary>
     private void AwardScore()
     {
         scr_Score.AddScore(scoreValue);
