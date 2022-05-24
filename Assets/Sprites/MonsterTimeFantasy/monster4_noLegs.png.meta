@@ -312,6 +312,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -2428,6 +2429,103 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      monster4_noLegs_47: 6071968947884634423
+      monster4_noLegs_88: -3911117964655024234
+      monster4_noLegs_79: 4172224474544612565
+      monster4_noLegs_65: -389068259287248370
+      monster4_noLegs_84: -8715727370264086255
+      monster4_noLegs_35: -5123539238053129687
+      monster4_noLegs_31: -771086054624944668
+      monster4_noLegs_57: 3139946746623472493
+      monster4_noLegs_72: 1523106954688568788
+      monster4_noLegs_83: -2453079020848214559
+      monster4_noLegs_39: -7074665945858712149
+      monster4_noLegs_32: -874955467371725540
+      monster4_noLegs_22: -4079208985713522257
+      monster4_noLegs_46: 150285132635898388
+      monster4_noLegs_44: -6455114293350944566
+      monster4_noLegs_41: 8757749594628968473
+      monster4_noLegs_55: -5693673331578816774
+      monster4_noLegs_94: 2642790666608823775
+      monster4_noLegs_95: 909229799743869511
+      monster4_noLegs_71: -5636961226048305491
+      monster4_noLegs_90: -7891785079866912153
+      monster4_noLegs_67: -8245834906168436037
+      monster4_noLegs_21: 783040437731772139
+      monster4_noLegs_76: -6855741552252731339
+      monster4_noLegs_33: 526052920132179821
+      monster4_noLegs_24: 4776805809128352456
+      monster4_noLegs_74: -7595228064841527546
+      monster4_noLegs_34: 1842170084616544309
+      monster4_noLegs_92: -4294563899744250584
+      monster4_noLegs_15: 4970479715275046829
+      monster4_noLegs_28: -472992559151104111
+      monster4_noLegs_16: -1687362268052550291
+      monster4_noLegs_81: 2003642935498783843
+      monster4_noLegs_48: -1233395714920539921
+      monster4_noLegs_29: -5777220018680184537
+      monster4_noLegs_93: -5067100467091357923
+      monster4_noLegs_13: -6955390222618057175
+      monster4_noLegs_59: 7845332398729062708
+      monster4_noLegs_63: 5285310076285449632
+      monster4_noLegs_50: 7882095455326750972
+      monster4_noLegs_64: 7655522252208980951
+      monster4_noLegs_58: -8974426944571598074
+      monster4_noLegs_66: 3968390111676632536
+      monster4_noLegs_62: -4541093354750888815
+      monster4_noLegs_68: -4295298902110994311
+      monster4_noLegs_11: 6872981830924993016
+      monster4_noLegs_25: 3169169985070084649
+      monster4_noLegs_30: 5060002435304516730
+      monster4_noLegs_75: -7698845473232567151
+      monster4_noLegs_38: 6955312201896711011
+      monster4_noLegs_91: 802117373788849392
+      monster4_noLegs_7: -5679466662875463566
+      monster4_noLegs_78: 545567447532981150
+      monster4_noLegs_49: -893258374532712839
+      monster4_noLegs_52: -1561074779576714316
+      monster4_noLegs_86: -5782461534435267319
+      monster4_noLegs_5: 2707453973384929399
+      monster4_noLegs_12: -4432132898475102166
+      monster4_noLegs_20: 612426787842872161
+      monster4_noLegs_23: 3894546074233872544
+      monster4_noLegs_82: -7637530314980899188
+      monster4_noLegs_89: 8269710710333499492
+      monster4_noLegs_0: -3745530183855628030
+      monster4_noLegs_3: 2246041750904678799
+      monster4_noLegs_54: -7987234850339217611
+      monster4_noLegs_19: 578558561427472085
+      monster4_noLegs_85: -6459321431642641169
+      monster4_noLegs_61: 5338259785580188946
+      monster4_noLegs_87: 915196716407474321
+      monster4_noLegs_70: 9170783286738435242
+      monster4_noLegs_37: 4621981863914279146
+      monster4_noLegs_26: -507308232067989670
+      monster4_noLegs_80: -626797551720728756
+      monster4_noLegs_51: 2023422933103919310
+      monster4_noLegs_43: -4183942563435402580
+      monster4_noLegs_73: 3352478597583178650
+      monster4_noLegs_10: 5122844199804205396
+      monster4_noLegs_6: 5938899829350687822
+      monster4_noLegs_9: -4142884309630609076
+      monster4_noLegs_40: 6380027202675409726
+      monster4_noLegs_53: -7829172834188774835
+      monster4_noLegs_60: 2374795296833939750
+      monster4_noLegs_36: -638707803191957980
+      monster4_noLegs_1: -8883443480094828294
+      monster4_noLegs_4: -8458196459894743277
+      monster4_noLegs_42: -2595233912816081780
+      monster4_noLegs_14: -3695958542171103721
+      monster4_noLegs_18: -3280503723313358244
+      monster4_noLegs_27: 6231861406509533054
+      monster4_noLegs_77: -7195367913811126288
+      monster4_noLegs_2: -1802046926973861610
+      monster4_noLegs_17: -7904098693507002521
+      monster4_noLegs_45: -9197607759577884855
+      monster4_noLegs_56: -7128406524970618924
+      monster4_noLegs_69: -9163483308039636671
+      monster4_noLegs_8: 4215317203263819871
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
